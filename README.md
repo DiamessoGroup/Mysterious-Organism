@@ -21,3 +21,13 @@ The second parameter is an array of 15 DNA bases.
 pAequorFactor() should return an object that contains the properties specimenNum and dna that correspond to the parameters provided.
 
 You’ll also add more methods to this returned object in the later steps.
+
+### Step 4
+
+Your team wants you to simulate P. aequor‘s high rate of mutation (change in its DNA).
+
+To simulate a mutation, in pAequorFactory()‘s returned object, add the method .mutate().
+
+.mutate() is responsible for randomly selecting a base in the object’s dna property and changing the current base to a different base. Then .mutate() will return the object’s dna.
+
+For example, if the randomly selected base is the 1st base and it is 'A', the base must be changed to 'T', 'C', or 'G'. But it cannot be 'A' again.

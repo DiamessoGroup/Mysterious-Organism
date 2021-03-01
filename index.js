@@ -18,7 +18,24 @@ function pAequorFactory(specimenNum, dna) {
   return {
     specimenNum,
     dna,
+    mutate() {
+      //Step 4
+      let randomDna = Math.floor(Math.random() * 15);
+      let dnaBases = ["A", "T", "C", "G"];
+      let indexBase = dnaBases.indexOf(this.dna[randomDna]);
+
+      dnaBases.splice(indexBase, 1);
+
+      let randomBase = Math.floor(Math.random() * dnaBases.length);
+
+      this.dna.splice(randomDna, 1, dnaBases[randomBase]);
+
+      return this.dna;
+    },
   };
 }
 
-console.log(pAequorFactory(1, mockUpStrand()));
+const pAequor = pAequorFactory(1, mockUpStrand());
+
+console.log(pAequor.dna);
+console.log(pAequor.mutate());
