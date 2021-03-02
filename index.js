@@ -22,15 +22,15 @@ function pAequorFactory(specimenNum, dna) {
       //Step 4
       let randomDna = Math.floor(Math.random() * 15);
       let dnaBases = ["A", "T", "C", "G"];
-      let indexBase = dnaBases.indexOf(this.dna[randomDna]);
+      let indexBase = dnaBases.indexOf(this.dna[randomDna]); // Get index of base in dnaBases that match random base in dna.
 
-      dnaBases.splice(indexBase, 1);
+      dnaBases.splice(indexBase, 1); // Remove matched base in dnaBases
 
-      let randomBase = Math.floor(Math.random() * dnaBases.length);
+      let randomBase = Math.floor(Math.random() * dnaBases.length); //  Generate a new random base based on the bases left in dnaBases
 
-      this.dna.splice(randomDna, 1, dnaBases[randomBase]);
+      this.dna.splice(randomDna, 1, dnaBases[randomBase]); // Remove previous random base in dna and replace it with new random base from dnaBases
 
-      return this.dna;
+      return this.dna; // return new mutated dna
     },
   };
 }
