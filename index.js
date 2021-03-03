@@ -32,10 +32,26 @@ function pAequorFactory(specimenNum, dna) {
 
       return this.dna; // return new mutated dna
     },
+    compareDNA(pAequor) {
+      // Step 5
+      let count = 0;
+      let percentage;
+      for (let i = 0, j = 0; i < this.dna, j < pAequor.dna.length; i++, j++) {
+        // Compare DNA Bases by location
+        if (this.dna[i] === pAequor.dna[j]) {
+          count++; // Find the count of identical DNA bases
+        }
+      }
+      percentage = Math.floor((count / 15) * 100); // Calculate percentage of identical DNA Bases
+      console.log(
+        `Specimen #${this.specimenNum} and specimen #${pAequor.specimenNum} have ${percentage}% DNA in common with ${count} identical DNA Bases.`
+      );
+    },
   };
 }
 
 const pAequor = pAequorFactory(1, mockUpStrand());
 
-console.log(pAequor.dna);
-console.log(pAequor.mutate());
+const pAequor2 = pAequorFactory(2, mockUpStrand());
+
+console.log(pAequor.compareDNA(pAequor2));
